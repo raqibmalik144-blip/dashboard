@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <header>
+        <nav class="sidebar">
+            <h1 class="logo"><i class="fas fa-chart-pie"></i> MyDash</h1>
+
+            <a href="#" class="nav-link active"><i class="fas fa-chart-bar"></i> Dashboard</a>
+            <a href="#" class="nav-link"><i class="fas fa-user"></i> Users</a>
+            <a href="#" class="nav-link"><i class="fas fa-dollar-sign"></i> Sales</a>
+            <a href="#" class="nav-link"><i class="fas fa-envelope"></i> Messages</a>
+            <a href="#" class="nav-link"><i class="fas fa-list"></i> Tasks</a>
+            <a href="#" class="nav-link"><i class="fas fa-calendar"></i> Calendar</a>
+
+            <a href="#" class="nav-link settings-link">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+
+            <a href="#" class="nav-link logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+
+            <div class="toggle-container">
+                <span class="icon">🌙</span>
+                <span>Dark Mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="profile-section">
+                <div class="profile-avatar">R</div>
+                <div>
+                    <p class="profile-name">Raqib</p>
+                    <small class="profile-role">Administrator</small>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- TOP SECTION -->
+        <section class="top-section">
+            <div class="search-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="search" placeholder="Search anything..." class="search-input">
+            </div>
+
+            <div class="user-info">
+                <div class="notif-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notif-badge">3</span>
+                </div>
+                <div class="user-avatar">R</div>
+                <div>
+                    <p class="user-name">Raqib</p>
+                    <small class="user-role">Admin</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- GREETING -->
+        <section class="greeting-section">
+            <div>
+                <h1 class="greeting">Good morning, Raqib 👋</h1>
+                <p class="sub-text">Here's what's happening with your dashboard today.</p>
+            </div>
+            <div class="date-time">
+                <span><i class="fas fa-calendar-alt"></i> Monday, 1 May 2026</span>
+                <span><i class="fas fa-clock"></i> 2:30 PM</span>
+            </div>
+        </section>
+
+
+        <!-- ================= STATS BOXES ================= -->
+        <section class="stats-section">
+            <div class="stats-container">
+
+                <div class="box">
+                    <div class="box-icon users-icon"><i class="fas fa-users"></i></div>
+                    <div class="box-info">
+                        <p class="box-title">Total Users</p>
+                        <span class="box-value">1,250</span>
+                        <p class="growth positive">
+                            <i class="fas fa-arrow-up"></i> 12.30% from last month
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-icon sales-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="box-info">
+                        <p class="box-title">Total Sales</p>
+                        <span class="box-value">12,344</span>
+                        <p class="growth positive">
+                            <i class="fas fa-arrow-up"></i> 22.10% from last month
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-icon orders-icon"><i class="fas fa-box"></i></div>
+                    <div class="box-info">
+                        <p class="box-title">Total Orders</p>
+                        <span class="box-value">1,250</span>
+                        <p class="growth positive">
+                            <i class="fas fa-arrow-up"></i> 12.30% from last month
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-icon revenue-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="box-info">
+                        <p class="box-title">Total Revenue</p>
+                        <span class="box-value">$1,250</span>
+                        <p class="growth positive">
+                            <i class="fas fa-arrow-up"></i> 12.30% from last month
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= CHART ================= -->
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3>Sales Overview</h3>
+                <div class="chart-tabs">
+                    <button class="tab-btn active">Weekly</button>
+                    <button class="tab-btn">Monthly</button>
+                    <button class="tab-btn">Yearly</button>
+                </div>
+            </div>
+            <canvas id="mainChart"></canvas>
+        </div>
+
+
+        <!-- ================= BOTTOM GRID ================= -->
+        <div class="bottom-grid">
+
+            <!-- RECENT ACTIVITY -->
+            <div class="activity-section">
+                <div class="section-header">
+                    <p class="activity-title">Recent Activity</p>
+                    <a href="#"><button class="view-btn">View all</button></a>
+                </div>
+
+                <div class="activity-item">
+                    <span class="dot users-dot"><i class="fas fa-user-plus"></i></span>
+                    <div class="activity-text">
+                        <span>New user registered</span>
+                        <small>2 minutes ago</small>
+                    </div>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+
+                <div class="activity-item">
+                    <span class="dot orders-dot"><i class="fas fa-shopping-cart"></i></span>
+                    <div class="activity-text">
+                        <span>New order placed</span>
+                        <small>15 minutes ago</small>
+                    </div>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+
+                <div class="activity-item">
+                    <span class="dot msg-dot"><i class="fas fa-envelope"></i></span>
+                    <div class="activity-text">
+                        <span>New message received</span>
+                        <small>1 hour ago</small>
+                    </div>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+
+                <div class="activity-item">
+                    <span class="dot pay-dot"><i class="fas fa-dollar-sign"></i></span>
+                    <div class="activity-text">
+                        <span>Payment received</span>
+                        <small>3 hours ago</small>
+                    </div>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+
+            <!-- DASHBOARD CARDS -->
+            <div class="dashboard-cards">
+
+                <!-- Top Products -->
+                <div class="card top-products">
+                    <div class="card-header">
+                        <h3>Top Products</h3>
+                        <span class="link">View All</span>
+                    </div>
+
+                    <div class="product">
+                        <span class="product-name">Perfume One</span>
+                        <div class="bar"><div style="width:80%" class="bar-fill"></div></div>
+                        <span class="product-sales">523 Sales</span>
+                    </div>
+
+                    <div class="product">
+                        <span class="product-name">Perfume Two</span>
+                        <div class="bar"><div style="width:60%" class="bar-fill bar-two"></div></div>
+                        <span class="product-sales">392 Sales</span>
+                    </div>
+
+                    <div class="product">
+                        <span class="product-name">Perfume Three</span>
+                        <div class="bar"><div style="width:45%" class="bar-fill bar-three"></div></div>
+                        <span class="product-sales">268 Sales</span>
+                    </div>
+                </div>
+
+                <!-- Task Progress -->
+                <div class="card task-progress">
+                    <h3>Task Progress</h3>
+                    <div class="circle" id="progressCircle">
+                        <svg viewBox="0 0 100 100" class="progress-svg">
+                            <circle cx="50" cy="50" r="40" class="circle-bg"/>
+                            <circle cx="50" cy="50" r="40" class="circle-fill" style="stroke-dasharray: 188 251;"/>
+                        </svg>
+                        <span id="percent">75%</span>
+                    </div>
+                    <ul class="legend">
+                        <li><span class="dot-legend green"></span> Completed &nbsp;<strong>15</strong></li>
+                        <li><span class="dot-legend yellow"></span> In Progress <strong>5</strong></li>
+                        <li><span class="dot-legend purple"></span> Pending &nbsp;&nbsp;<strong>3</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="card events">
+                    <div class="card-header">
+                        <h3>Upcoming Events</h3>
+                        <span class="link">View Calendar</span>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-date">
+                            <span class="event-day">20</span>
+                            <span class="event-month">MAY</span>
+                        </div>
+                        <div class="event-info">
+                            <p>Team Meeting</p>
+                            <small><i class="fas fa-clock"></i> 10:00 AM – 11:00 AM</small>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-date event-date-2">
+                            <span class="event-day">22</span>
+                            <span class="event-month">MAY</span>
+                        </div>
+                        <div class="event-info">
+                            <p>Project Deadline</p>
+                            <small><i class="fas fa-calendar-day"></i> All Day Event</small>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-date event-date-3">
+                            <span class="event-day">25</span>
+                            <span class="event-month">MAY</span>
+                        </div>
+                        <div class="event-info">
+                            <p>Client Call</p>
+                            <small><i class="fas fa-clock"></i> 02:00 PM – 03:00 PM</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+</body>
+<script>
+    {
+        const ctx = document.getElementById('mainChart');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [2000, 4000, 6500, 9000, 5000, 7000, 8500],
+                    borderColor: '#6c63ff',
+                    backgroundColor: 'rgba(108,99,255,0.15)',
+                    tension: 0.4,
+                    fill: true,
+                    pointBackgroundColor: '#6c63ff',
+                    pointRadius: 5,
+                    pointHoverRadius: 8,
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                    y: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                }
+            }
+        });
+    }
+
+    {
+        const toggle = document.getElementById("darkModeToggle");
+        toggle.addEventListener("change", () => {
+            document.body.classList.toggle("light");
+        });
+    }
+    </script>
+</html>
